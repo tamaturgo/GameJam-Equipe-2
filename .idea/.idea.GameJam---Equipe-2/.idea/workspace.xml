@@ -18,11 +18,16 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/bullet.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/EnemyRanged.cs" />
       <option value="$PROJECT_DIR$/Assets/Code/bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Code/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/bullet.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1uJirN36Ie5yBHsrbNnqvSuPHce" />

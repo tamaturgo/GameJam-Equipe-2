@@ -66,7 +66,7 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        playerRig.velocity = new Vector2(inputHorizontal * moveSpeed * Time.deltaTime, playerRig.velocity.y);
+        playerRig.velocity = new Vector2(inputHorizontal * moveSpeed, playerRig.velocity.y);
 
     }
 
