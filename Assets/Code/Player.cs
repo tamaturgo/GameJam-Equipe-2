@@ -30,8 +30,6 @@ public class Player : MonoBehaviour
             _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
             _melleTarget.EnemyDamage(damagePower);
         }
-      
-        
     }
     
     
