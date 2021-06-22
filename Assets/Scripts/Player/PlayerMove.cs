@@ -10,8 +10,10 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float jumpForce;
     
     private float inputHorizontal;
+    private float inputVertical;
     public bool isJumping;
     public bool doubleJump;
+    public bool isSquating;
 
     private Rigidbody2D playerRig;
     private Transform playerSprite;
@@ -31,10 +33,12 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         inputHorizontal = Input.GetAxisRaw("Horizontal");
+        inputVertical = Input.GetAxisRaw("Vertical");
         
         // Jump
 
         Jump();
+        Squat();
     }
 
     private void FixedUpdate()
@@ -42,7 +46,7 @@ public class PlayerMove : MonoBehaviour
         
         // Walk
 
-        if (inputHorizontal > 0.1)
+        if (inputHorizontal > 0.1 && isSquating == false)
         {
             
             playerAnim.SetBool("walk", true);
@@ -50,7 +54,7 @@ public class PlayerMove : MonoBehaviour
             gunSprite.enabled = true;
         }
         
-        else if (inputHorizontal < -0.1)
+        else if (inputHorizontal < -0.1 && isSquating == false)
         {
             
             playerAnim.SetBool("walk", true);
@@ -94,6 +98,23 @@ public class PlayerMove : MonoBehaviour
             }
         }
         
+    }
+    
+    private void Squat(){
+        
+        if(inputVertical < -0.1 && isJumping == false)
+        {
+            isSquating = true;
+            inputHorizontal = 0;
+            gunSprite.enabled = true;
+            playerAnim.SetBool("squat", true);
+        }
+        else
+        {
+            isSquating = false;
+            playerAnim.SetBool("squat", false);
+        }
+
     }
 
     private void OnCollisionEnter2D(Collision2D other)
