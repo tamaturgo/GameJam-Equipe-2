@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D caps;
     private EnemyMelle _melleTarget;
+    private EnemyRanged _enemyRanged;
     
     // Start is called before the first frame update
     void Start()
@@ -29,6 +30,11 @@ public class Player : MonoBehaviour
         {
             _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
             _melleTarget.EnemyDamage(damagePower);
+        }
+        if (other.gameObject.CompareTag("EnemyRanged"))
+        {
+            _enemyRanged = other.gameObject.GetComponent<EnemyRanged>();
+            _enemyRanged.EnemyDamage(damagePower);
         }
     }
     

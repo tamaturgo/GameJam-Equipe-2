@@ -8,7 +8,7 @@ public class PlayerMove : MonoBehaviour
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
-    
+    [SerializeField] private Joystick _joystick;
     private float inputHorizontal;
     private float inputVertical;
     public bool isJumping;
@@ -32,12 +32,11 @@ public class PlayerMove : MonoBehaviour
 
     private void Update()
     {
-        inputHorizontal = Input.GetAxisRaw("Horizontal");
-        inputVertical = Input.GetAxisRaw("Vertical");
+        inputHorizontal = _joystick.Horizontal;
+        inputVertical = _joystick.Vertical;
         
         // Jump
 
-        Jump();
         Squat();
     }
 
@@ -76,8 +75,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
-        {
+       
             gunSprite.enabled = true;
             if (!isJumping)
             {
@@ -96,13 +94,13 @@ public class PlayerMove : MonoBehaviour
                     playerRig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 }
             }
-        }
+        
         
     }
     
     private void Squat(){
         
-        if(inputVertical < -0.1 && isJumping == false)
+        if(inputVertical < -0.8 && isJumping == false)
         {
             isSquating = true;
             inputHorizontal = 0;
