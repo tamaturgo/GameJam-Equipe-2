@@ -12,10 +12,12 @@ public class Boss : MonoBehaviour
      private float shieldTimer;
     private Player _player;
     [SerializeField] private GameObject thunder; 
+    [SerializeField] private int bossHP;
     private Rigidbody2D _rigidbody2D;
     private Random randomPos;
     private int posx;
     private SpriteRenderer _renderer;
+    
     
     // Live System 
     
@@ -82,6 +84,18 @@ public class Boss : MonoBehaviour
     {
         yield return new WaitForSeconds(countDown);
         transform.GetChild(0).gameObject.SetActive(false);
+    }
+    
+    // Damage
+    public void BossDamage(int damage)
+    {
+        bossHP -= damage;
+        if(bossHP < 0) Die();
+    }
+    
+    public void Die()
+    { 
+        Destroy(gameObject);
     }
     
 }

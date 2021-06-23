@@ -13,7 +13,7 @@ public class bullet : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private EnemyMelle _melleTarget;
     private EnemyRanged _enemyRanged;
-
+    private Boss _boss;
     
 
     private Rigidbody2D _rigidbody2D;
@@ -71,20 +71,22 @@ public class bullet : MonoBehaviour
             {
                 _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
                 _melleTarget.EnemyDamage(damage);
-                Destroy(gameObject);
             }
-
             if (other.CompareTag("EnemyRanged"))
             {
                 _enemyRanged = other.gameObject.GetComponent<EnemyRanged>();
                 _enemyRanged.EnemyDamage(damage);
-                Destroy(gameObject);
             }
-
             if (other.gameObject.CompareTag("Shield"))
             {
-                Destroy(gameObject);
+                
             }
+            if (other.gameObject.CompareTag("Boss"))
+            {
+                _boss = other.gameObject.GetComponent<Boss>();
+                _boss.BossDamage(damage);
+            }
+            Destroy(gameObject);
         }
         
     }
