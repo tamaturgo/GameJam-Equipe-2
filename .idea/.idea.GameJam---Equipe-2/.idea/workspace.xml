@@ -18,6 +18,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Boss.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/EnemyRanged.cs" />
@@ -26,8 +29,11 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controller/JoyStickController.cs" />
       <option value="$PROJECT_DIR$/Assets/Joystick Pack/Scripts/Base/Joystick.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Thunder.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Ranged/bullet.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Boss.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1uJirN36Ie5yBHsrbNnqvSuPHce" />
@@ -73,6 +79,7 @@
       <option name="presentableId" value="Default" />
       <updated>1624390291336</updated>
       <workItem from="1624390295990" duration="4211000" />
+      <workItem from="1624457719403" duration="13888000" />
     </task>
     <servers />
   </component>

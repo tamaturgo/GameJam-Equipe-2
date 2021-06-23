@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   visionCamp: 2
-  shotCamp: 8
+  shotCamp: 18
   enemySpeed: 3
   enemyHp: 50
-  damagePower: 0
+  damagePower: 9
   _damageDelay: 2
   shot: {fileID: 197746102205252408, guid: 2145b6eb7f680754f9fde3bfcd663b14, type: 3}

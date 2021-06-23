@@ -11,6 +11,8 @@ public class bullet : MonoBehaviour
     private Player _player;
     private Vector2 distance;
     private SpriteRenderer _spriteRenderer;
+    private EnemyMelle _melleTarget;
+    private EnemyRanged _enemyRanged;
 
     
 
@@ -27,12 +29,33 @@ public class bullet : MonoBehaviour
 
     private void setVelocity()
     {
-        Vector3 normalizedDistance = (_player.transform.position - transform.position).normalized;
-        _rigidbody2D.velocity = normalizedDistance * shotSpeed;
-        if (_rigidbody2D.velocity.x < 0)
+        if (gameObject.CompareTag("Player_bullet"))
         {
-            _spriteRenderer.flipX = true;
+            
+            if (_player.transform.rotation.y == 1 || _player.transform.rotation.y == -1)
+            {
+                _rigidbody2D.AddForce(new Vector2(-8,0),ForceMode2D.Impulse);
+            }
+            else
+            {
+                _rigidbody2D.AddForce(new Vector2(8,0),ForceMode2D.Impulse);
+            }
+                
+            if (_rigidbody2D.velocity.x < 0)
+            {
+                _spriteRenderer.flipX = true;
+            }  
         }
+        else
+        {
+            Vector3 normalizedDistance = (_player.transform.position - transform.position).normalized;
+            _rigidbody2D.velocity = normalizedDistance * shotSpeed;
+            if (_rigidbody2D.velocity.x < 0)
+            {
+                _spriteRenderer.flipX = true;
+            }    
+        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -40,6 +63,29 @@ public class bullet : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             _player.TakeDamage(damage);
+            
         }
+        else
+        {
+            if (other.CompareTag("EnemyMelle"))
+            {
+                _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
+                _melleTarget.EnemyDamage(damage);
+                Destroy(gameObject);
+            }
+
+            if (other.CompareTag("EnemyRanged"))
+            {
+                _enemyRanged = other.gameObject.GetComponent<EnemyRanged>();
+                _enemyRanged.EnemyDamage(damage);
+                Destroy(gameObject);
+            }
+
+            if (other.gameObject.CompareTag("Shield"))
+            {
+                Destroy(gameObject);
+            }
+        }
+        
     }
 }

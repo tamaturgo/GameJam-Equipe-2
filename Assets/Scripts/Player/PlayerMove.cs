@@ -9,11 +9,17 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
     [SerializeField] private Joystick _joystick;
+    [SerializeField] private GameObject shotBullet;
+    [SerializeField] private float shotTimerDelay;
+    private float shotTimer;
+    [SerializeField] private float bulletAjustmentY;
+    [SerializeField] private float bulletAjustmentX;
     private float inputHorizontal;
     private float inputVertical;
     public bool isJumping;
     public bool doubleJump;
     public bool isSquating;
+    public bool canWalk;
 
     private Rigidbody2D playerRig;
     private Transform playerSprite;
@@ -22,7 +28,7 @@ public class PlayerMove : MonoBehaviour
 
     private void Start()
     {
-        
+        canWalk = true;
         playerRig = GetComponent<Rigidbody2D>();
         playerSprite = GetComponent<Transform>();
         playerAnim = GetComponent<Animator>();
@@ -34,17 +40,28 @@ public class PlayerMove : MonoBehaviour
     {
         inputHorizontal = _joystick.Horizontal;
         inputVertical = _joystick.Vertical;
-        
-        // Jump
 
+        shotTimer += Time.deltaTime;
+        // Jump
         Squat();
+        if (canWalk)
+        {
+            Walk();
+        }
+        else
+        {
+            playerRig.velocity = new Vector2(playerRig.velocity.x/100, playerRig.velocity.y);
+        }
     }
 
     private void FixedUpdate()
     {
-        
-        // Walk
+      
+    }
 
+    private void Walk()
+    {
+        // Walk
         if (inputHorizontal > 0.1 && isSquating == false)
         {
             
@@ -65,18 +82,16 @@ public class PlayerMove : MonoBehaviour
         {
             
             playerAnim.SetBool("walk", false);
-            gunSprite.enabled = false;
+            
 
         }
 
         playerRig.velocity = new Vector2(inputHorizontal * moveSpeed, playerRig.velocity.y);
 
     }
-
-    private void Jump()
+    public void Jump()
     {
-       
-            gunSprite.enabled = true;
+      
             if (!isJumping)
             {
                 doubleJump = true;
@@ -94,10 +109,26 @@ public class PlayerMove : MonoBehaviour
                     playerRig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 }
             }
-        
-        
     }
-    
+
+    public void Shot()
+    {
+        if (shotTimer> shotTimerDelay)
+        {
+            shotTimer = 0;
+            gunSprite.enabled = true;
+            if (transform.rotation.y == -1)
+            {
+                Instantiate(shotBullet, new Vector3(transform.position.x - bulletAjustmentX,transform.position.y + bulletAjustmentY, transform.position.z), Quaternion.identity);    
+            }
+            else
+            {
+                Instantiate(shotBullet, new Vector3(transform.position.x + bulletAjustmentX,transform.position.y + bulletAjustmentY, transform.position.z), Quaternion.identity);
+            }
+        
+            playerAnim.SetTrigger("shot");
+        }
+    }
     private void Squat(){
         
         if(inputVertical < -0.8 && isJumping == false)
@@ -122,6 +153,11 @@ public class PlayerMove : MonoBehaviour
             isJumping = false;
             playerAnim.SetBool("jump", false);
         }
+    }
+
+    public void setWalk()
+    {
+        canWalk = !canWalk;
     }
     
 }
