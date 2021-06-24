@@ -60,33 +60,43 @@ public class bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        
+        if (other.CompareTag("Player") && gameObject.CompareTag("Enemy_bullet"))
         {
             _player.TakeDamage(damage);
-            
+            Destroy(gameObject);
         }
         else
         {
-            if (other.CompareTag("EnemyMelle"))
+            if (gameObject.CompareTag("Player_bullet"))
             {
-                _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
-                _melleTarget.EnemyDamage(damage);
+                if (other.CompareTag("EnemyMelle"))
+                {
+                    _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
+                    _melleTarget.EnemyDamage(damage);
+                }
+                if (other.CompareTag("EnemyRanged"))
+                {
+                    _enemyRanged = other.gameObject.GetComponent<EnemyRanged>();
+                    _enemyRanged.EnemyDamage(damage);
+                }
+                if (other.gameObject.CompareTag("Shield"))
+                {
+                    Destroy(gameObject);
+                }
+                if (other.gameObject.CompareTag("Boss"))
+                {
+                    _boss = other.gameObject.GetComponent<Boss>();
+                    _boss.BossDamage(damage);
+                    Destroy(gameObject);
+                }
             }
-            if (other.CompareTag("EnemyRanged"))
+
+            if (other.gameObject.layer == 6)
             {
-                _enemyRanged = other.gameObject.GetComponent<EnemyRanged>();
-                _enemyRanged.EnemyDamage(damage);
+                Destroy(gameObject);    
             }
-            if (other.gameObject.CompareTag("Shield"))
-            {
-                
-            }
-            if (other.gameObject.CompareTag("Boss"))
-            {
-                _boss = other.gameObject.GetComponent<Boss>();
-                _boss.BossDamage(damage);
-            }
-            Destroy(gameObject);
+            
         }
         
     }

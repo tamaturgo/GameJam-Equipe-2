@@ -5,7 +5,7 @@ namespace Assets.Scripts
     public class Parallax : MonoBehaviour
     {
         private float length, startpos;
-        public GameObject cam;
+        [SerializeField] private GameObject cam;
         public float parallaxEffecct;
 
         void Start()

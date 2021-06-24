@@ -20,6 +20,7 @@ public class PlayerMove : MonoBehaviour
     public bool doubleJump;
     public bool isSquating;
     public bool canWalk;
+    public bool canJump;
 
     private Rigidbody2D playerRig;
     private Transform playerSprite;
@@ -50,7 +51,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            playerRig.velocity = new Vector2(playerRig.velocity.x/100, playerRig.velocity.y);
+            playerRig.velocity = new Vector2(playerRig.velocity.x/250, playerRig.velocity.y);
         }
     }
 
@@ -99,7 +100,9 @@ public class PlayerMove : MonoBehaviour
     }
     public void Jump()
     {
-      
+
+        if (canJump)
+        {
             if (!isJumping)
             {
                 doubleJump = true;
@@ -117,10 +120,12 @@ public class PlayerMove : MonoBehaviour
                     playerRig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 }
             }
+        }
     }
 
     public void Shot()
     {
+        playerRig.velocity = new Vector2(0, playerRig.velocity.y);
         if (shotTimer> shotTimerDelay)
         {
             shotTimer = 0;
@@ -154,13 +159,30 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    /*private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.layer == 6)
         {
             isJumping = false;
             playerAnim.SetBool("jump", false);
         }
+    }
+    */
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        canJump = true;
+        if (other.gameObject.layer == 6)
+        {
+            isJumping = false;
+            playerAnim.SetBool("jump", false);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (isJumping) canJump = true;
+        else canJump = false;
     }
 
     public void setWalk()

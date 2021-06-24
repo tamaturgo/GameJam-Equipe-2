@@ -73,9 +73,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -9095717837082945937, guid: bd3cb4af8406d4436a2ae8c2aafe1f8d, type: 3}
-  m_Color: {r: 1, g: 0.7183187, b: 0, a: 1}
+  m_Color: {r: 0.1855549, g: 0.1426842, b: 0.4528302, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   visionCamp: 2
   shotCamp: 18
   enemySpeed: 3
-  enemyHp: 50
+  enemyHp: 36
   damagePower: 9
   _damageDelay: 2
   shot: {fileID: 197746102205252408, guid: 2145b6eb7f680754f9fde3bfcd663b14, type: 3}

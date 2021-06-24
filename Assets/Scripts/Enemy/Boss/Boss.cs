@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
     [SerializeField] private float shieldTimerDelay;
      private float shieldTimer;
     private Player _player;
+    private Animator _animator;
     [SerializeField] private GameObject thunder; 
     [SerializeField] private int bossHP;
     private Rigidbody2D _rigidbody2D;
@@ -25,6 +26,7 @@ public class Boss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _renderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         randomPos = new System.Random();
@@ -65,7 +67,7 @@ public class Boss : MonoBehaviour
     private void SpawnThuder()
     {
         posx = randomPos.Next((int) _player.transform.position.x - 2, (int) _player.transform.position.x + 2);
-        Instantiate(thunder, new Vector3(posx, 6.4f, 0), Quaternion.identity);
+        Instantiate(thunder, new Vector3(posx, transform.position.y + 7, 0), Quaternion.identity);
     }
 
     private void FlipSprite()
@@ -95,7 +97,13 @@ public class Boss : MonoBehaviour
     
     public void Die()
     { 
-        Destroy(gameObject);
+        _animator.SetTrigger("die");
+        Destroy(gameObject, 0.6f);
+    }
+
+    public int BossGetHP()
+    {
+        return bossHP;
     }
     
 }

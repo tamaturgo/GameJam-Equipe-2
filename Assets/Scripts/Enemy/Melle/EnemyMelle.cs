@@ -17,14 +17,16 @@ public class EnemyMelle : MonoBehaviour
     private float _damageDelayTimer;
     private float nextVelocity;
     private Animator _animator;
+    private SpriteRenderer _renderer;
     
     // Start is called before the first frame update
     void Start()
     {
+        _renderer = GetComponent<SpriteRenderer>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _playerScript = FindObjectOfType<Player>();
         _animator = GetComponent<Animator>();
-        initalPos = transform.position;
+     
     }
 
     // Update is called once per frame
@@ -34,9 +36,13 @@ public class EnemyMelle : MonoBehaviour
         _distance = _playerScript.transform.position - transform.position;
         _damageDelayTimer += Time.deltaTime;
         Die();
-        if (initalPos[1] != transform.position.y)
+        if (_playerScript.transform.position.x - transform.position.x > 0)
         {
-            transform.position = new Vector3( transform.position.x, initalPos[1], transform.position.z);
+            _renderer.flipX = true;
+        }
+        else
+        {
+            _renderer.flipX = false;
         }
     }
 
@@ -60,6 +66,14 @@ public class EnemyMelle : MonoBehaviour
         
     }
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == 6)
+        {
+            _rigidbody2D.AddForce(new Vector2(0, 2), ForceMode2D.Impulse);
+        }
+    }
+
     private void AtackPlayer(int damage)
     {
         _playerScript.TakeDamage(damage);
@@ -76,6 +90,7 @@ public class EnemyMelle : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
+            _rigidbody2D.bodyType = RigidbodyType2D.Static;
             _animator.SetTrigger("hited");
             Destroy(gameObject, 0.44f);
         }

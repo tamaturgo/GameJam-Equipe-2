@@ -35,4 +35,9 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public int getHp()
+    {
+        return life;
+    }
 }

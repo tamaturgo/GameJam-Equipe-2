@@ -38,8 +38,8 @@ public class EnemyRanged : MonoBehaviour
         FollowPlayer(_distance, visionCamp);
         if (_damageDelayTimer > _damageDelay)
         {
-            ShotPlayer(_distance, shotCamp);
             _damageDelayTimer = 0;
+            ShotPlayer(_distance, shotCamp);
         }
         
     }
@@ -48,6 +48,7 @@ public class EnemyRanged : MonoBehaviour
     private void AtackPlayer()
     {
         Instantiate(shot, transform.position, quaternion.identity);
+        
     }
     
     
@@ -82,7 +83,7 @@ public class EnemyRanged : MonoBehaviour
         {
             if (distance[0] < vision)
             {
-                nextVelocity = enemySpeed;
+                nextVelocity = -enemySpeed;
             }
             else
             {
@@ -93,7 +94,7 @@ public class EnemyRanged : MonoBehaviour
         {
             if (distance[0] > -vision)
             {
-                nextVelocity = -enemySpeed;
+                nextVelocity = enemySpeed;
             }
             else
             {
