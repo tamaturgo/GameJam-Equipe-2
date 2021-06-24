@@ -13,22 +13,31 @@ public class EnemyMelle : MonoBehaviour
     [SerializeField] private int enemyHp;
     [SerializeField] private int damagePower;
     [SerializeField] private float _damageDelay;
+    private Vector2 initalPos;
     private float _damageDelayTimer;
     private float nextVelocity;
+    private Animator _animator;
     
     // Start is called before the first frame update
     void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _playerScript = FindObjectOfType<Player>();
+        _animator = GetComponent<Animator>();
+        initalPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         _distance = _playerScript.transform.position - transform.position;
         _damageDelayTimer += Time.deltaTime;
         Die();
+        if (initalPos[1] != transform.position.y)
+        {
+            transform.position = new Vector3( transform.position.x, initalPos[1], transform.position.z);
+        }
     }
 
     private void FixedUpdate()
@@ -67,7 +76,8 @@ public class EnemyMelle : MonoBehaviour
     {
         if (enemyHp <= 0)
         {
-            Destroy(gameObject);
+            _animator.SetTrigger("hited");
+            Destroy(gameObject, 0.44f);
         }
     }
     // Movement 

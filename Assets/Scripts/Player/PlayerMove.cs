@@ -86,7 +86,15 @@ public class PlayerMove : MonoBehaviour
 
         }
 
-        playerRig.velocity = new Vector2(inputHorizontal * moveSpeed, playerRig.velocity.y);
+        playerRig.AddForce(new Vector2(inputHorizontal * moveSpeed * 3.5f,0) , ForceMode2D.Force);
+        if (playerRig.velocity.x > moveSpeed)
+        {
+            playerRig.velocity =new Vector2(moveSpeed,playerRig.velocity.y);
+        }
+        if (playerRig.velocity.x < -moveSpeed)
+        {
+            playerRig.velocity =new Vector2(-moveSpeed,playerRig.velocity.y);
+        }
 
     }
     public void Jump()
