@@ -40,6 +40,7 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Controller/HudControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Ranged/bullet.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Boss.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1uJirN36Ie5yBHsrbNnqvSuPHce" />
@@ -88,6 +89,7 @@
       <workItem from="1624457719403" duration="13888000" />
       <workItem from="1624495805550" duration="2033000" />
       <workItem from="1624544887303" duration="10067000" />
+      <workItem from="1624627992827" duration="646000" />
     </task>
     <servers />
   </component>
