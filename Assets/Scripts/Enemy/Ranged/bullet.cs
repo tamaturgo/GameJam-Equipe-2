@@ -74,11 +74,13 @@ public class bullet : MonoBehaviour
                 {
                     _melleTarget = other.gameObject.GetComponent<EnemyMelle>();
                     _melleTarget.EnemyDamage(damage);
+                    Destroy(gameObject);
                 }
                 if (other.CompareTag("EnemyRanged"))
                 {
                     _enemyRanged = other.gameObject.GetComponent<EnemyRanged>();
                     _enemyRanged.EnemyDamage(damage);
+                    Destroy(gameObject);
                 }
                 if (other.gameObject.CompareTag("Shield"))
                 {

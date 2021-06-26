@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     
     private static GameController instance;
     
-    private void Awake()
+    /*private void Awake()
     {
         if (instance != null)
         {
@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-    }
+    }*/
 
     public void StarNewGame(string sceneName)
     {

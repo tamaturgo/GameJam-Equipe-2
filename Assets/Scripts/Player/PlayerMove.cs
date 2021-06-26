@@ -26,6 +26,7 @@ public class PlayerMove : MonoBehaviour
     private Transform playerSprite;
     private Animator playerAnim;
     private SpriteRenderer gunSprite;
+    private SoundController bulletSound;
 
     private void Start()
     {
@@ -34,6 +35,8 @@ public class PlayerMove : MonoBehaviour
         playerSprite = GetComponent<Transform>();
         playerAnim = GetComponent<Animator>();
         gunSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        //bulletSound = new SoundController();
+        //bulletSound.BulletSound();
 
     }
 
@@ -105,6 +108,7 @@ public class PlayerMove : MonoBehaviour
         {
             if (!isJumping)
             {
+                FindObjectOfType<SoundController>().JumpSound();
                 doubleJump = true;
                 isJumping = true;
                 playerAnim.SetBool("jump", true);
@@ -115,6 +119,7 @@ public class PlayerMove : MonoBehaviour
             {
                 if (doubleJump)
                 {
+                    FindObjectOfType<SoundController>().JumpSound();
                     doubleJump = false;
                     playerAnim.SetBool("jump", true);
                     playerRig.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
@@ -128,6 +133,7 @@ public class PlayerMove : MonoBehaviour
         playerRig.velocity = new Vector2(0, playerRig.velocity.y);
         if (shotTimer> shotTimerDelay)
         {
+            FindObjectOfType<SoundController>().BulletSound();
             shotTimer = 0;
             gunSprite.enabled = true;
             if (transform.rotation.y == -1)
