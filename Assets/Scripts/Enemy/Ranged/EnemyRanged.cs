@@ -37,6 +37,15 @@ public class EnemyRanged : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_playerScript.transform.position.x < transform.position.x)
+        {
+            transform.eulerAngles = new Vector3(0, 0, transform.rotation.z);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 180, transform.rotation.z);
+        }
+        
         FollowPlayer(_distance, visionCamp);
         if (_damageDelayTimer > _damageDelay)
         {
@@ -49,6 +58,7 @@ public class EnemyRanged : MonoBehaviour
     // Atack
     private void AtackPlayer()
     {
+        FindObjectOfType<SoundController>().BulletSound();
         _animator.SetTrigger("shot");
         StartCoroutine(shotTimer(0.27f));
     }

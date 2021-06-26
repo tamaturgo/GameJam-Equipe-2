@@ -61,7 +61,7 @@ public class EnemyMelle : MonoBehaviour
                 _damageDelayTimer = 0;
                 AtackPlayer(damagePower);   
             }
-            
+
         }
         
     }
@@ -70,8 +70,10 @@ public class EnemyMelle : MonoBehaviour
     {
         if (other.gameObject.layer == 6)
         {
-            _rigidbody2D.AddForce(new Vector2(0, 2), ForceMode2D.Impulse);
+            _rigidbody2D.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
         }
+
+
     }
 
     private void AtackPlayer(int damage)

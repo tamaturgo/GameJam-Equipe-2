@@ -33,14 +33,14 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Thunder.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controller/HUDController.cs" />
       <option value="$PROJECT_DIR$/Assets/Prefabs/Parallax.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Melle/EnemyMelle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Controller/HudControl.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Ranged/bullet.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Boss.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Parallax.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Ranged/EnemyRanged.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMove.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Melle/EnemyMelle.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Ranged/EnemyRanged.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Boss.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1uJirN36Ie5yBHsrbNnqvSuPHce" />
@@ -91,6 +91,7 @@
       <workItem from="1624544887303" duration="10067000" />
       <workItem from="1624627992827" duration="646000" />
       <workItem from="1624659432037" duration="2162000" />
+      <workItem from="1624711119622" duration="2407000" />
     </task>
     <servers />
   </component>

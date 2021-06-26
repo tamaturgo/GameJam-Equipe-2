@@ -67,7 +67,7 @@ public class Boss : MonoBehaviour
     private void SpawnThuder()
     {
         posx = randomPos.Next((int) _player.transform.position.x - 2, (int) _player.transform.position.x + 2);
-        Instantiate(thunder, new Vector3(posx, transform.position.y + 7, 0), Quaternion.identity);
+        Instantiate(thunder, new Vector3(posx, transform.position.y + 7.5f, 0), Quaternion.identity);
     }
 
     private void FlipSprite()
