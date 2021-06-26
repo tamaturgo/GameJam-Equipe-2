@@ -9,11 +9,12 @@ public class Player : MonoBehaviour
     [SerializeField] private int damagePower;
     private Rigidbody2D _rigidbody2D;
     private CapsuleCollider2D caps;
+    private GameController gc;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        gc = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -32,7 +33,7 @@ public class Player : MonoBehaviour
     {
         if (life <= 0)
         {
-            Destroy(gameObject);
+            gc.StarNewGame("GameOver");
         }
     }
 

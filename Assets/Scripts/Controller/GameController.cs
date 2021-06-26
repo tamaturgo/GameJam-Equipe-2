@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,25 +6,26 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
 
-    [SerializeField] private GameObject panelCredits;
-    [SerializeField] private string sceneName;
-    public void StarNewGame()
+    
+    private static GameController instance;
+    
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void StarNewGame(string sceneName)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
-    public void ShowCredits()
-    {
-        if (!panelCredits.activeInHierarchy)
-        {
-            panelCredits.SetActive(true);
-        }
-        else
-        {
-            panelCredits.SetActive(false);
-        }
-    }
-    
     public void CloseGame()
     { 
         Application.Quit();

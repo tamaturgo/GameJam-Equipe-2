@@ -16,11 +16,13 @@ public class EnemyRanged : MonoBehaviour
     [SerializeField] private float _damageDelay;
     private float _damageDelayTimer;
     private float nextVelocity;
+    private Animator _animator;
     [SerializeField] private GameObject shot;
     
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _playerScript = FindObjectOfType<Player>();
     }
@@ -47,11 +49,17 @@ public class EnemyRanged : MonoBehaviour
     // Atack
     private void AtackPlayer()
     {
+        _animator.SetTrigger("shot");
+        StartCoroutine(shotTimer(0.27f));
+    }
+
+    private IEnumerator shotTimer(float timer)
+    {
+        yield return new WaitForSeconds(timer);
         Instantiate(shot, transform.position, quaternion.identity);
+
         
     }
-    
-    
     // Damage
     public void EnemyDamage(int damage)
     {
