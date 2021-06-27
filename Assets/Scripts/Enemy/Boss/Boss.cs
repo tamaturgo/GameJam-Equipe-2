@@ -105,8 +105,8 @@ public class Boss : MonoBehaviour
     public void Die()
     { 
         _animator.SetTrigger("die");
-        StartCoroutine(LoadVictory(1.5f));
-        Destroy(gameObject, 0.6f);
+        StartCoroutine(LoadVictory(0.8f));
+        
     }
 
     public int BossGetHP()
