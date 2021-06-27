@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7105676022440860943}
   - component: {fileID: 7105676022440860939}
   - component: {fileID: 2283719220627137354}
-  - component: {fileID: 8789624085736080586}
   - component: {fileID: 1695783795496870630}
   m_Layer: 6
   m_Name: Enemy
@@ -56,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -161,46 +160,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8789624085736080586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7105676022440860944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7db70e0ea77f5ac47a8f4565a9406397, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ShadowGroup: 0
-  m_HasRenderer: 1
-  m_UseRendererSilhouette: 1
-  m_CastsShadows: 1
-  m_SelfShadows: 0
-  m_ApplyToSortingLayers: 00000000
-  m_ShapePath:
-  - {x: -0.25482184, y: -0.24888825, z: 0}
-  - {x: -0.1256593, y: -0.25408068, z: 0}
-  - {x: -0.057595946, y: -0.2063172, z: 0}
-  - {x: 0.054648675, y: -0.17646493, z: 0}
-  - {x: 0.1322639, y: -0.14064233, z: 0}
-  - {x: 0.16414645, y: -0.12127024, z: 0}
-  - {x: 0.26114458, y: -0.05227979, z: 0}
-  - {x: 0.3029377, y: 0.00981287, z: 0}
-  - {x: 0.27427933, y: 0.06951722, z: 0}
-  - {x: 0.23606841, y: 0.12802766, z: 0}
-  - {x: 0.15840037, y: 0.16478097, z: 0}
-  - {x: 0.041431602, y: 0.1698208, z: 0}
-  - {x: -0.14565945, y: 0.12898375, z: 0}
-  - {x: -0.26027027, y: 0.12821217, z: 0}
-  - {x: -0.3561182, y: -0.002127828, z: 0}
-  - {x: -0.36320442, y: -0.081547014, z: 0}
-  - {x: -0.35731226, y: -0.1346718, z: 0}
-  - {x: -0.3167132, y: -0.19437632, z: 0}
-  m_ShapePathHash: 1655831175
-  m_Mesh: {fileID: 0}
-  m_InstanceId: 51970
 --- !u!61 &1695783795496870630
 BoxCollider2D:
   m_ObjectHideFlags: 0
