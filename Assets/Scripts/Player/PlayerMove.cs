@@ -82,7 +82,7 @@ public class PlayerMove : MonoBehaviour
             gunSprite.enabled = true;
         }
 
-        else if (inputHorizontal == 0 && isJumping == false)
+        else if (inputHorizontal == 0)
         {
             joyRaw = 0;
             playerAnim.SetBool("walk", false);

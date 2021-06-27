@@ -11,19 +11,19 @@ C:\Program Files\Unity\Hub\Editor\2020.3.6f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/ludus/Documents/GitHub/GameJam-Equipe-2
+C:/Users/ludus/Documents/GitHub/oficial
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-51314
-Successfully changed project path to: C:/Users/ludus/Documents/GitHub/GameJam-Equipe-2
-C:/Users/ludus/Documents/GitHub/GameJam-Equipe-2
+51351
+Successfully changed project path to: C:/Users/ludus/Documents/GitHub/oficial
+C:/Users/ludus/Documents/GitHub/oficial
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 46.00 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 46.26 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.6f1 (338bb68529b2)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/ludus/Documents/GitHub/GameJam-Equipe-2/Assets
+[Subsystems] Discovering subsystems at path C:/Users/ludus/Documents/GitHub/oficial/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
@@ -35,83 +35,42 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56556
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001833 seconds.
+Registered in 0.001892 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 42.30 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 40.64 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.877 seconds
+- Completed reload, in  2.156 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.001648 seconds.
+Registered in 0.001089 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 40.18 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 40.78 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.038 seconds
+- Completed reload, in  1.253 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
-Refreshing native plugins compatible for Editor in 0.38 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.53 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2029 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 93.7 MB.
 System memory in use after: 93.8 MB.
 
 Unloading 20 unused Assets to reduce memory usage. Loaded Objects now: 2476.
-Total: 2.394500 ms (FindLiveObjects: 0.232300 ms CreateObjectMapping: 0.071600 ms MarkObjects: 2.033800 ms  DeleteObjects: 0.056000 ms)
+Total: 2.366300 ms (FindLiveObjects: 0.188300 ms CreateObjectMapping: 0.061600 ms MarkObjects: 2.059200 ms  DeleteObjects: 0.056300 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Assets/Audio/133008__cosmicd__annulet-of-absorption.mp3
-  artifactKey: Guid(3f76d6e7e1ebfb049b27e8783877bae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Audio/133008__cosmicd__annulet-of-absorption.mp3 using Guid(3f76d6e7e1ebfb049b27e8783877bae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a92b5a0c74e74439c8b5e1c4db3dcec5') in 0.198187 seconds
-  Import took 0.202669 seconds .
+  path: Assets/player.physicsMaterial2D
+  artifactKey: Guid(76b828b76154b2c4492d7581428684a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/player.physicsMaterial2D using Guid(76b828b76154b2c4492d7581428684a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff5e4ca37601ea5447a3e28512ffc526') in 0.051088 seconds
+  Import took 0.054645 seconds .
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000410 seconds.
-  path: Assets/Assets/Audio/jumpland44100.mp3
-  artifactKey: Guid(7bdf8dc893086544aa4207d2346bd4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Audio/jumpland44100.mp3 using Guid(7bdf8dc893086544aa4207d2346bd4c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c909695dbac2607c6ffbd782150db88b') in 0.018692 seconds
-  Import took 0.022117 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000306 seconds.
-  path: Assets/Assets/Audio/song18.mp3
-  artifactKey: Guid(e12da5017e8c7de43af9884edb018c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Audio/song18.mp3 using Guid(e12da5017e8c7de43af9884edb018c61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9314d32f73d19bd98562bace7c3c78f3') in 0.018248 seconds
-  Import took 0.023956 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000337 seconds.
-  path: Assets/Assets/Audio/Fire 4.mp3
-  artifactKey: Guid(ffecd3f0f72d11647980554dc5cd5919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Audio/Fire 4.mp3 using Guid(ffecd3f0f72d11647980554dc5cd5919) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '26e003bb6ae417f2d41885ba70fbc54b') in 0.013914 seconds
-  Import took 0.017559 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000274 seconds.
-  path: Assets/Assets/Audio/Hit 1.mp3
-  artifactKey: Guid(d518ce885f42e1b40910a78c72cc6906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Audio/Hit 1.mp3 using Guid(d518ce885f42e1b40910a78c72cc6906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bc3538bbf38be278477a99343c6d712') in 0.011099 seconds
-  Import took 0.015483 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000260 seconds.
-  path: Assets/Assets/Audio/ambientmain_0.mp3
-  artifactKey: Guid(7808ec4cb490bfb43b386b3ade50b2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Assets/Audio/ambientmain_0.mp3 using Guid(7808ec4cb490bfb43b386b3ade50b2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1ef3c358bc7e77316131234e9e31fb2f') in 0.017340 seconds
-  Import took 0.020790 seconds .
-
-AssetImportWorkerClient::OnTransportError - code=2 error=End of file
