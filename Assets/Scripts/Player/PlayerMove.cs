@@ -21,7 +21,7 @@ public class PlayerMove : MonoBehaviour
     public bool isSquating;
     public bool canWalk;
     public bool canJump;
-
+    private float joyRaw;
     private Rigidbody2D playerRig;
     private Transform playerSprite;
     private Animator playerAnim;
@@ -54,7 +54,7 @@ public class PlayerMove : MonoBehaviour
         }
         else
         {
-            playerRig.velocity = new Vector2(playerRig.velocity.x/250, playerRig.velocity.y);
+            playerRig.velocity = new Vector2(0, playerRig.velocity.y);
         }
     }
 
@@ -68,7 +68,7 @@ public class PlayerMove : MonoBehaviour
         // Walk
         if (inputHorizontal > 0.1 && isSquating == false)
         {
-            
+            joyRaw = 1;
             playerAnim.SetBool("walk", true);
             playerSprite.eulerAngles =  new Vector3(0, 0, 0);
             gunSprite.enabled = true;
@@ -76,7 +76,7 @@ public class PlayerMove : MonoBehaviour
         
         else if (inputHorizontal < -0.1 && isSquating == false)
         {
-            
+            joyRaw = -1;
             playerAnim.SetBool("walk", true);
             playerSprite.eulerAngles =  new Vector3(0, 180, 0);
             gunSprite.enabled = true;
@@ -84,21 +84,14 @@ public class PlayerMove : MonoBehaviour
 
         else if (inputHorizontal == 0 && isJumping == false)
         {
-            
+            joyRaw = 0;
             playerAnim.SetBool("walk", false);
-            
+            playerRig.velocity = new Vector2(0, playerRig.velocity.y);
 
         }
 
-        playerRig.AddForce(new Vector2(inputHorizontal * moveSpeed * 5f,0) , ForceMode2D.Force);
-        if (playerRig.velocity.x > moveSpeed)
-        {
-            playerRig.velocity =new Vector2(moveSpeed,playerRig.velocity.y);
-        }
-        if (playerRig.velocity.x < -moveSpeed)
-        {
-            playerRig.velocity =new Vector2(-moveSpeed,playerRig.velocity.y);
-        }
+        playerRig.velocity = new Vector2(moveSpeed * joyRaw, playerRig.velocity.y);
+        
 
     }
     public void Jump()
@@ -165,15 +158,6 @@ public class PlayerMove : MonoBehaviour
 
     }
 
-    /*private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.layer == 6)
-        {
-            isJumping = false;
-            playerAnim.SetBool("jump", false);
-        }
-    }
-    */
 
     private void OnTriggerStay2D(Collider2D other)
     {

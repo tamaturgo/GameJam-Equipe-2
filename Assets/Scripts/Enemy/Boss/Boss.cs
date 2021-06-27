@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class Boss : MonoBehaviour
@@ -67,7 +68,7 @@ public class Boss : MonoBehaviour
     private void SpawnThuder()
     {
         posx = randomPos.Next((int) _player.transform.position.x - 2, (int) _player.transform.position.x + 2);
-        Instantiate(thunder, new Vector3(posx, transform.position.y + 7.5f, 0), Quaternion.identity);
+        Instantiate(thunder, new Vector3(posx, transform.position.y + 7.9f, 0), Quaternion.identity);
     }
 
     private void FlipSprite()
@@ -95,9 +96,16 @@ public class Boss : MonoBehaviour
         if(bossHP < 0) Die();
     }
     
+    public IEnumerator LoadVictory(float countDown)
+    {
+        yield return new WaitForSeconds(countDown);
+        SceneManager.LoadScene("victory");
+    }
+    
     public void Die()
     { 
         _animator.SetTrigger("die");
+        StartCoroutine(LoadVictory(1.5f));
         Destroy(gameObject, 0.6f);
     }
 

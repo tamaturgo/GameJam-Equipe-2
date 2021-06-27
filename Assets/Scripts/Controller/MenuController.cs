@@ -7,6 +7,7 @@ namespace Controller
 
 
         [SerializeField] private GameObject panelCredits;
+        
         public void ShowCredits()
         {
             if (!panelCredits.activeInHierarchy)

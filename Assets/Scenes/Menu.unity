@@ -1261,7 +1261,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 7808ec4cb490bfb43b386b3ade50b2fe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.274
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2451,7 +2451,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Main
+          m_StringArgument: cutscene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1317299376
