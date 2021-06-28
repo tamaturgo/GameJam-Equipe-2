@@ -39,8 +39,8 @@
       <option value="$PROJECT_DIR$/Assets/Scripts/Player/Player.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Melle/EnemyMelle.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Ranged/EnemyRanged.cs" />
-      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMove.cs" />
       <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/Boss/Boss.cs" />
+      <option value="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMove.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1uJirN36Ie5yBHsrbNnqvSuPHce" />
